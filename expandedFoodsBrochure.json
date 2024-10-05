@@ -1,0 +1,770 @@
+{
+    "Chilled": {
+      "Ham": [
+        {
+          "name": "Gammon Ham 1/2 3.8kg (av)",
+          "description": "A half gammon ham weighing approximately 3.8kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Full Gammon Ham 7.6kg (av)",
+          "description": "A full gammon ham weighing approximately 7.6kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Wiltshire Gammon 1/2 3.3kg (av)",
+          "description": "Half a Wiltshire cured gammon weighing approximately 3.3kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Crumbed Gammon 1/2 3.8kg (av)",
+          "description": "Half a gammon ham coated with breadcrumbs, weighing approximately 3.8kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Slow Cooked Kettle Ham 3.2kg (av)",
+          "description": "A slow-cooked kettle ham, tender and juicy, weighing approximately 3.2kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Full Whitebirk Gammon 6.5kg (av)",
+          "description": "A full Whitebirk gammon ham weighing approximately 6.5kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Premium Ham '70%' 1/2 3.5kg (av)",
+          "description": "Half a premium ham with 70% meat content, weighing approximately 3.5kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Festive Ham 1/2 4.2kg (av)",
+          "description": "Half a festive ham, perfect for holiday celebrations, weighing approximately 4.2kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Full Festive Ham 8.4kg (av)",
+          "description": "A full festive ham weighing approximately 8.4kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Rindless Festive Ham 1/2 4.2kg (av)",
+          "description": "Half a rindless festive ham, weighing approximately 4.2kg.",
+          "dietary_requirements": []
+        }
+      ],
+      "Pork": [
+        {
+          "name": "Roast Pork 1/2 3.6kg (av)",
+          "description": "Half a roasted pork joint weighing approximately 3.6kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Roast Pork Stuffed 1/2 3.3kg (av)",
+          "description": "Half a roasted pork joint stuffed with sage and onion, weighing approximately 3.3kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Stuffed Belly Pork 2.2kg (av)",
+          "description": "A stuffed belly pork joint weighing approximately 2.2kg.",
+          "dietary_requirements": []
+        }
+      ],
+      "Beef": [
+        {
+          "name": "Topside Cooked Beef 1/2 3.3kg (av)",
+          "description": "Half a topside joint of cooked beef, weighing approximately 3.3kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Cooked Brisket 2.3kg (av)",
+          "description": "A cooked brisket of beef weighing approximately 2.3kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Pastrami 2kg (av)",
+          "description": "Sliced pastrami seasoned with herbs and spices, weighing approximately 2kg.",
+          "dietary_requirements": []
+        }
+      ],
+      "Poultry": [
+        {
+          "name": "Luxury Turkey Breast 2.9kg (av)",
+          "description": "A luxury turkey breast joint, cooked and ready to slice, weighing approximately 2.9kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Premier Turkey 1/2 2kg (av)",
+          "description": "Half a premier cooked turkey joint, weighing approximately 2kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Cooked Turkey On The Bone 4.5kg (av)",
+          "description": "A cooked turkey on the bone, ideal for carving, weighing approximately 4.5kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Boneless Chicken Breast 2kg (av)",
+          "description": "Cooked boneless chicken breast fillets, weighing approximately 2kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Chilled Full Chicken Breast 1kg",
+          "description": "Chilled, uncooked full chicken breast fillets, weighing 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Chilled Roast Full Chicken Breast 1kg",
+          "description": "Chilled, roasted full chicken breast fillets, weighing 1kg.",
+          "dietary_requirements": []
+        }
+      ],
+      "Sliced & Pulled Meats": [
+        {
+          "name": "Sliced Wiltshire Ham 500g",
+          "description": "Slices of Wiltshire cured ham, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Deli Ham 500g",
+          "description": "Slices of deli-style ham, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Festive Ham 500g",
+          "description": "Slices of festive ham, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Pork 500g",
+          "description": "Slices of cooked pork, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Topside Beef 500g",
+          "description": "Slices of cooked topside beef, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Chicken (Red Tractor) 500g",
+          "description": "Slices of cooked chicken breast from Red Tractor assured farms, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Turkey 500g",
+          "description": "Slices of cooked turkey, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Corned Beef 500g",
+          "description": "Slices of corned beef, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Pastrami 500g",
+          "description": "Slices of seasoned pastrami, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Cater Pack Chicken Breast Slices 1kg",
+          "description": "Catering pack of sliced chicken breast, weighing 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Pulled Ham Hock 1kg",
+          "description": "Tender pulled ham hock, packed in 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Plain Pulled Pork 1kg",
+          "description": "Tender pulled pork without sauce, packed in 1kg.",
+          "dietary_requirements": []
+        }
+      ],
+      "Delicatessen Meats": [
+        {
+          "name": "Cooked, Smoked Streaky Bacon 1kg",
+          "description": "Cooked and smoked streaky bacon slices, packed in 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Ox Tongue 1.8kg (av)",
+          "description": "Cooked ox tongue, ready to slice, weighing approximately 1.8kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Haslet 1.6kg (av)",
+          "description": "Traditional pork haslet loaf with herbs, weighing approximately 1.6kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Brawn 2kg (av)",
+          "description": "A traditional brawn made from pork meat, weighing approximately 2kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Haggis Weighted",
+          "description": "Traditional Scottish haggis, weight varies.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Black Pudding Stick 1.36kg",
+          "description": "A stick of traditional black pudding, weighing 1.36kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Belvoir Black Pudding Stick 1.36kg",
+          "description": "Premium Belvoir black pudding stick, weighing 1.36kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Black Pudding Chubbs 12 x 220g",
+          "description": "Individual black pudding chubbs, 12 packs of 220g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "White Pudding Rings 700g (av)",
+          "description": "Traditional white pudding rings, weighing approximately 700g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Savoury Ducks 2 x 15pk",
+          "description": "Packs of savoury ducks (faggots), 2 packs of 15 pieces each.",
+          "dietary_requirements": []
+        }
+      ],
+      "Continental": [
+        {
+          "name": "Garlic Sausage 1.36kg",
+          "description": "Garlic-flavored pork sausage, weighing 1.36kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Danish Salami Stick 1.81kg",
+          "description": "Traditional Danish salami stick, weighing 1.81kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Black Peppered Salami Block 1.8kg (av)",
+          "description": "Salami coated with black peppercorns, weighing approximately 1.8kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Milano Salami 1.7kg (av)",
+          "description": "Italian Milano salami, weighing approximately 1.7kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Chorizo Stick 1.5kg (av)",
+          "description": "Spanish chorizo sausage stick, weighing approximately 1.5kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Pepperoni Stick 500g (av)",
+          "description": "Pepperoni sausage stick, weighing approximately 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Chorizo Cooking Sausages 1kg",
+          "description": "Chorizo sausages suitable for cooking, packed in 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Pepperoni 1kg",
+          "description": "Slices of pepperoni sausage, packed in 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Danish Salami 500g",
+          "description": "Slices of Danish salami, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Prosciutto 500g",
+          "description": "Thinly sliced Italian prosciutto ham, packed in 500g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Chorizo 250g",
+          "description": "Slices of Spanish chorizo, packed in 250g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Spanish Tapas Meats 150g",
+          "description": "Assortment of sliced Spanish meats for tapas, packed in 150g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Sliced Italian Antipasto 150g",
+          "description": "Assortment of sliced Italian meats for antipasto, packed in 150g.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Brussels Pate 1kg",
+          "description": "Smooth Brussels pâté made from pork liver, packed in 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Mushroom Pate 1kg",
+          "description": "Pâté made with mushrooms and pork liver, packed in 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Ardennes Pate 1kg",
+          "description": "Coarse Ardennes pâté made from pork liver, packed in 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Duck Pate 1kg",
+          "description": "Rich duck pâté, packed in 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Chicken Liver Pate 1kg",
+          "description": "Smooth chicken liver pâté, packed in 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Pitted Green Olives 'Canned' 4.3kg",
+          "description": "Canned pitted green olives, drained weight 4.3kg.",
+          "dietary_requirements": ["Vegetarian", "Vegan"]
+        },
+        {
+          "name": "Pitted Black Olives 'Canned' 4.3kg",
+          "description": "Canned pitted black olives, drained weight 4.3kg.",
+          "dietary_requirements": ["Vegetarian", "Vegan"]
+        },
+        {
+          "name": "Olives 'Spicy Cocktail' 3kg",
+          "description": "A mix of olives with a spicy cocktail marinade, packed in 3kg.",
+          "dietary_requirements": ["Vegetarian", "Vegan"]
+        },
+        {
+          "name": "Olives 'Stuffed With Garlic' 3kg",
+          "description": "Green olives stuffed with garlic, packed in 3kg.",
+          "dietary_requirements": ["Vegetarian", "Vegan"]
+        },
+        {
+          "name": "Olives 'Stuffed With Feta' 2kg",
+          "description": "Green olives stuffed with feta cheese, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Sundried Tomatoes 1kg",
+          "description": "Sundried tomatoes in oil, packed in 1kg.",
+          "dietary_requirements": ["Vegetarian", "Vegan"]
+        }
+      ],
+      "Block Cheese": [
+        {
+          "name": "1/2 Coloured Cheddar 2.5kg (av)",
+          "description": "Half a block of coloured cheddar cheese, weighing approximately 2.5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "1/2 White Cheddar 2.5kg (av)",
+          "description": "Half a block of white cheddar cheese, weighing approximately 2.5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "1/2 Mature Coloured Cheddar 2.5kg (av)",
+          "description": "Half a block of mature coloured cheddar cheese, weighing approximately 2.5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "1/2 Mature White Cheddar 2.5kg (av)",
+          "description": "Half a block of mature white cheddar cheese, weighing approximately 2.5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "1/2 Red Leicester 2.5kg (av)",
+          "description": "Half a block of Red Leicester cheese, weighing approximately 2.5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "1/2 White Cheshire 2.5kg (av)",
+          "description": "Half a block of white Cheshire cheese, weighing approximately 2.5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "1/2 Wensleydale 2.5kg (av)",
+          "description": "Half a block of Wensleydale cheese, weighing approximately 2.5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "1/2 Double Gloucester 2.5kg (av)",
+          "description": "Half a block of Double Gloucester cheese, weighing approximately 2.5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Coloured Cheddar 5kg (av)",
+          "description": "A full block of coloured cheddar cheese, weighing approximately 5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Mild White Cheddar 5kg (av)",
+          "description": "A full block of mild white cheddar cheese, weighing approximately 5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        }
+      ],
+      "Speciality Cheese": [
+        {
+          "name": "Blue Stilton 1/4 2kg (av)",
+          "description": "A quarter wheel of Blue Stilton cheese, weighing approximately 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Calveley White Stilton 1kg (av)",
+          "description": "White Stilton cheese, weighing approximately 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Wensleydale & Cranberry 1.1kg (av)",
+          "description": "Wensleydale cheese blended with cranberries, weighing approximately 1.1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Wensleydale & Apricot 1.1kg (av)",
+          "description": "Wensleydale cheese blended with apricots, weighing approximately 1.1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Four Counties 1.5kg (av)",
+          "description": "A cheese combining four regional cheeses, weighing approximately 1.5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Applewood 1.5kg (av)",
+          "description": "A smoked cheddar cheese with a delicate smoky flavor, weighing approximately 1.5kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Red Hot Chilli Cheese 'Fiery Dragon' 1kg (av)",
+          "description": "A spicy cheese infused with hot chillies, weighing approximately 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        }
+      ],
+      "Grated Cheese": [
+        {
+          "name": "Grated Coloured Cheddar 1kg",
+          "description": "Grated coloured cheddar cheese, packed in 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Grated White Cheddar 1kg",
+          "description": "Grated white cheddar cheese, packed in 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Grated Coloured Cheddar 2kg",
+          "description": "Grated coloured cheddar cheese, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Grated White Cheddar 2kg",
+          "description": "Grated white cheddar cheese, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Mature Coloured Grated Cheddar 2kg",
+          "description": "Grated mature coloured cheddar cheese, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Mature White Grated Cheddar 2kg",
+          "description": "Grated mature white cheddar cheese, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Grated Mozzarella 2kg",
+          "description": "Grated mozzarella cheese, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Grated Mozza/Cheddar Mix 70:30 2kg",
+          "description": "Grated mix of 70% mozzarella and 30% cheddar cheese, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Grated 'Formaggio' Parmesan 1kg",
+          "description": "Grated Formaggio Parmesan-style cheese, packed in 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        }
+      ],
+      "Continental Cheese": [
+        {
+          "name": "Brie 1kg",
+          "description": "A wheel of French Brie cheese, weighing 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Brie 3kg (av)",
+          "description": "A large wheel of French Brie cheese, weighing approximately 3kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Edam 2kg (av)",
+          "description": "A ball of Dutch Edam cheese, weighing approximately 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Danish Blue 3kg (av)",
+          "description": "A wheel of Danish Blue cheese, weighing approximately 3kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Mozzarella Block 2.3kg (av)",
+          "description": "A block of mozzarella cheese, weighing approximately 2.3kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Smoked Cheese Log 2kg",
+          "description": "A log of smoked cheese, weighing 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Goats Log 1kg",
+          "description": "A log of goat's cheese, weighing 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Grana Padano Parmesan 1kg (av)",
+          "description": "A piece of Grana Padano Parmesan cheese, weighing approximately 1kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Greek Feta Block 900g",
+          "description": "A block of Greek feta cheese, weighing 900g.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Greek Feta Portions 12 x 200g",
+          "description": "Greek feta cheese portions, 12 packs of 200g each.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Hotos Diced Greek Feta 900g",
+          "description": "Diced Greek feta cheese, packed in 900g.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Halloumi 12 x 250g",
+          "description": "Cypriot halloumi cheese, 12 packs of 250g each.",
+          "dietary_requirements": ["Vegetarian"]
+        }
+      ],
+      "Sliced & Pre-Pack Cheese": [
+        {
+          "name": "White Cheddar Cheese Slices 50 x 20g",
+          "description": "Slices of white cheddar cheese, 50 slices of 20g each.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Coloured Cheddar Slices 50 x 20g",
+          "description": "Slices of coloured cheddar cheese, 50 slices of 20g each.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Mature White Cheddar Cheese Slices 50 x 20g",
+          "description": "Slices of mature white cheddar cheese, 50 slices of 20g each.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Sliced Smoked Applewood Cheese 500g",
+          "description": "Slices of smoked Applewood cheese, packed in 500g.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Mozzarella Slices 50 x 20g",
+          "description": "Slices of mozzarella cheese, 50 slices of 20g each.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Cheese 'Burger' Slices 112 x 12.5g",
+          "description": "Processed cheese slices for burgers, 112 slices of 12.5g each.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Sliced Emmental 1kg",
+          "description": "Slices of Emmental cheese, packed in 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Cow's Mozzarella Balls 12 x 125g",
+          "description": "Cow's milk mozzarella balls, 12 packs of 125g each.",
+          "dietary_requirements": ["Vegetarian"]
+        }
+      ],
+      "Soft Cheese & Curd": [
+        {
+          "name": "Cottage Cheese 1kg",
+          "description": "Creamy cottage cheese, packed in 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Full Fat Soft Cream Cheese 1kg",
+          "description": "Full-fat soft cream cheese, packed in 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Yorkshire Curd 1.6kg",
+          "description": "Traditional Yorkshire curd, weighing 1.6kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Yorkshire Curd 3.2kg",
+          "description": "Traditional Yorkshire curd, weighing 3.2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        }
+      ],
+      "Soured Cream & Yoghurt": [
+        {
+          "name": "Soured Cream 2kg",
+          "description": "Smooth soured cream, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Greek Yoghurt 1kg",
+          "description": "Thick and creamy Greek yoghurt, packed in 1kg.",
+          "dietary_requirements": ["Vegetarian"]
+        }
+      ],
+      "Eggs": [
+        {
+          "name": "Fresh Eggs 'Medium' 180 x 1 ea",
+          "description": "Medium-sized fresh eggs, pack of 180.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Large Fresh Eggs 180 x 1 ea",
+          "description": "Large-sized fresh eggs, pack of 180.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Boiled Eggs 48 x 1 ea",
+          "description": "Ready-to-eat boiled eggs, pack of 48.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Free Range Boiled Eggs 48 x 1 ea",
+          "description": "Ready-to-eat free-range boiled eggs, pack of 48.",
+          "dietary_requirements": ["Vegetarian"]
+        }
+      ],
+      "Spreads & Fats": [
+        {
+          "name": "Kerrymaid Buttery 2kg",
+          "description": "Spreadable buttery blend, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Summer County 2kg",
+          "description": "Spreadable margarine, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian", "Vegan"]
+        },
+        {
+          "name": "Just Like Butter 2kg",
+          "description": "Margarine that tastes like butter, packed in 2kg.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Kerrymaid Buttery 12 x 1kg",
+          "description": "Spreadable buttery blend, 12 packs of 1kg each.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Salted Jersey Butter 10 x 250g",
+          "description": "Salted butter made from Jersey cow milk, 10 packs of 250g each.",
+          "dietary_requirements": ["Vegetarian"]
+        },
+        {
+          "name": "Lard 40 x 250g",
+          "description": "Pure lard, 40 packs of 250g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Lard 12.5kg",
+          "description": "Bulk pack of pure lard, weighing 12.5kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Shortening 12.5kg",
+          "description": "Vegetable shortening for baking, weighing 12.5kg.",
+          "dietary_requirements": ["Vegetarian", "Vegan"]
+        },
+        {
+          "name": "Cake Margarine 12.5kg",
+          "description": "Margarine suitable for cake making, weighing 12.5kg.",
+          "dietary_requirements": ["Vegetarian", "Vegan"]
+        },
+        {
+          "name": "Pork Dripping 12 x 250g",
+          "description": "Traditional pork dripping, 12 packs of 250g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Beef Dripping 12 x 250g",
+          "description": "Traditional beef dripping, 12 packs of 250g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Goose Fat 12 x 180g",
+          "description": "Premium goose fat for roasting, 12 packs of 180g each.",
+          "dietary_requirements": []
+        }
+      ],
+      "Pork Pies": [
+        {
+          "name": "Buffet Pork Pies 30 x 56g",
+          "description": "Mini pork pies ideal for buffets, 30 pies of 56g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Pork Pies 'Hand Raised' Small 20 x 165g",
+          "description": "Small hand-raised pork pies, 20 pies of 165g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Small Wrapped 'Hand Raised' Pork Pies 20 x 165g",
+          "description": "Small hand-raised pork pies, individually wrapped, 20 pies of 165g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Large Pork Pies 'Hand Raised' 10 x 454g",
+          "description": "Large hand-raised pork pies, 10 pies of 454g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Large Wrapped 'Hand Raised' Pork Pies 10 x 454g",
+          "description": "Large hand-raised pork pies, individually wrapped, 10 pies of 454g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Lattice Topped 2lb Pork Pies 5 x 908g",
+          "description": "Large pork pies with a lattice top, 5 pies of 908g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "TC Morris 5oz Pork Pies 12 x 140g",
+          "description": "Traditional pork pies from TC Morris, 12 pies of 140g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "TC Morris 'Wrapped' 5oz Pork Pies 12 x 250g",
+          "description": "Traditional pork pies from TC Morris, individually wrapped, 12 pies of 250g each.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Ascot Pork Pie 'no egg' 1 x 3kg",
+          "description": "Large Ascot pork pie without egg, weighing 3kg.",
+          "dietary_requirements": []
+        },
+        {
+          "name": "Gala Pork Pie 'with egg' 1 x 3kg",
+          "description": "Large gala pork pie with egg, weighing 3kg.",
+          "dietary_requirements": []
+        }
+      ]
+    }
+    
+  }
+  
