@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ChatMessage from './components/ChatMessage'
 import VenueInput from './components/VenueInput'
 import { ChatMessageType, Stage, MenuItem } from './types'
-import { searchRestaurant, getMenu } from './services/api'
+import { searchRestaurant, getMenu, computeSimilarities } from './services/api'
 
 function App() {
   const [messages, setMessages] = useState<ChatMessageType[]>([
@@ -27,6 +27,22 @@ function App() {
         addAIMessage('Menu items:', 'ingredients')
         console.log(menuResult.menu_items)
         addAIMessage(menuResult.menu_items, 'ingredients')
+
+        // Compute similarities after loading menu items
+        addAIMessage('Computing similarities...', 'computing')
+        const similaritiesResult = await computeSimilarities()
+        console.log('Similarities result:', similaritiesResult)
+        addAIMessage('Similarities computed', 'computed')
+
+        // You can process the similarities result here if needed
+        // For example, you could add a new message with the most similar items
+        if (similaritiesResult.menu_items) {
+          const topSimilarities = similaritiesResult.menu_items.map((item: any) => {
+            const topIngredient = Object.entries(item.similarities).reduce((a, b) => a[1].similarity > b[1].similarity ? a : b)
+            return `${item.name}: ${topIngredient[0]} - ${topIngredient[1].most_similar_item} (${topIngredient[1].similarity.toFixed(2)})`
+          }).join('\n')
+          addAIMessage(`Top similarities:\n${topSimilarities}`, 'similarities')
+        }
       } else {
         addAIMessage('No menu items found.', 'ingredients')
       }
@@ -38,7 +54,6 @@ function App() {
       addAIMessage('Sorry, I encountered an error while processing your request.', 'error')
     }
   }
-
 
   const addAIMessage = (content: string | MenuItem[], stage: Stage) => {
     setMessages((prevMessages) => [...prevMessages, { role: 'assistant', content, stage }])

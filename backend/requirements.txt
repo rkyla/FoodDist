@@ -5,3 +5,4 @@ uvicorn==0.22.0
 pydantic==1.10.8
 openai
 python-dotenv
+numpy

@@ -1,4 +1,4 @@
-export type Stage = 'initial' | 'searching' | 'found' | 'menu_loaded' | 'ingredients' | 'error'
+export type Stage = 'initial' | 'searching' | 'found' | 'menu_loaded' | 'ingredients' | 'error' | 'computing' | 'computed' | 'similarities'
 
 export interface ChatMessageType {
   role: 'user' | 'assistant'

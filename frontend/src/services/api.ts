@@ -21,3 +21,14 @@ export const getMenu = async (restaurantName: string) => {
     throw error;
   }
 };
+
+export const computeSimilarities = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/compute_similarities`);
+    console.log('Computed similarities:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error computing similarities:', error);
+    throw error;
+  }
+};
