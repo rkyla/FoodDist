@@ -1,33 +1,69 @@
 import React, { useState } from 'react'
-import { User, Bot } from 'lucide-react'
-import { ChatMessageType } from '../types'
-import { render } from 'react-dom'
+import { User, Bot, ChevronDown, ChevronUp } from 'lucide-react'
+import { ChatMessageType, MenuItem } from '../types'
 
 interface ChatMessageProps {
   message: ChatMessageType
 }
 
 const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
-  const isUser = message.role === 'user'
   const [isExpanded, setIsExpanded] = useState(false)
-
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded)
-  }
+  const isUser = message.role === 'user'
 
   const getStageColor = (stage?: string) => {
     switch (stage) {
       case 'searching':
         return 'bg-blue-100 text-blue-800'
       case 'found':
-        return 'bg-orange-100 text-orange-800'
-      case 'menu_loaded':
         return 'bg-green-100 text-green-800'
+      case 'menu_loaded':
+        return 'bg-yellow-100 text-yellow-800'
       case 'ingredients':
         return 'bg-purple-100 text-purple-800'
       default:
         return 'bg-gray-100 text-gray-800'
     }
+  }
+
+  const renderContent = () => {
+    if (message.stage === 'ingredients' && Array.isArray(message.content)) {
+      const menuItems = message.content as MenuItem[]
+      const displayedMenuItems = isExpanded ? menuItems : menuItems.slice(0, 3)
+
+      return (
+        <>
+          <ul className="list-disc pl-5 mb-2">
+            {displayedMenuItems.map((menuItem, index) => (
+              <li key={index}>
+                <strong>{menuItem.name}</strong>
+                <ul className="list-circle pl-5">
+                  {menuItem.ingredients?.map((ingredient, i) => (
+                    <li key={i}>{ingredient}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+          {menuItems.length > 3 && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="text-blue-500 hover:text-blue-700 font-medium flex items-center"
+            >
+              {isExpanded ? (
+                <>
+                  <ChevronUp size={16} className="mr-1" /> Collapse
+                </>
+              ) : (
+                <>
+                  <ChevronDown size={16} className="mr-1" /> Expand
+                </>
+              )}
+            </button>
+          )}
+        </>
+      )
+    }
+    return <p className="text-sm">{message.content as string}</p>
   }
 
   return (
@@ -42,7 +78,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
               {message.stage.charAt(0).toUpperCase() + message.stage.slice(1)}
             </div>
           )}
-          <p className="text-sm">{message.content}</p>
+          {renderContent()}
         </div>
       </div>
     </div>

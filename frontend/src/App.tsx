@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ChatMessage from './components/ChatMessage'
 import VenueInput from './components/VenueInput'
-import { ChatMessageType, Stage } from './types'
+import { ChatMessageType, Stage, MenuItem } from './types'
 import { searchRestaurant, getMenu } from './services/api'
 
 function App() {
@@ -25,7 +25,8 @@ function App() {
       
       if (menuResult.menu_items && menuResult.menu_items.length > 0) {
         addAIMessage('Menu items:', 'ingredients')
-        addAIMessage(menuResult.menu_items.map((item: { name: string; ingredients: string[] }) => `${item.name} (${item.ingredients.join(', ')})`).join(', '), 'ingredients')
+        console.log(menuResult.menu_items)
+        addAIMessage(menuResult.menu_items, 'ingredients')
       } else {
         addAIMessage('No menu items found.', 'ingredients')
       }
@@ -38,11 +39,12 @@ function App() {
     }
   }
 
-  const addAIMessage = (content: string, stage: Stage) => {
+
+  const addAIMessage = (content: string | MenuItem[], stage: Stage) => {
     setMessages((prevMessages) => [...prevMessages, { role: 'assistant', content, stage }])
   }
 
-  const generateAIResponse = (venue: string, menuItems: string[] = []) => {
+  const generateAIResponse = (venue: string | string[], menuItems: string[] = []) => {
     // You can implement more sophisticated logic here based on the menu items
     const responses = [
       `For ${venue}, I recommend our new line of plant-based proteins. They're perfect for vegan cafes and health-conscious customers.`,

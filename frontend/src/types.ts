@@ -1,7 +1,12 @@
-export type Stage = 'initial' | 'searching' | 'found' | 'menu_loaded' | 'ingredients'
+export type Stage = 'initial' | 'searching' | 'found' | 'menu_loaded' | 'ingredients' | 'error'
 
 export interface ChatMessageType {
   role: 'user' | 'assistant'
-  content: string
+  content: string | MenuItem[]
   stage?: Stage
 }
+
+export type MenuItem = {
+  name: string;
+  ingredients: string[] | undefined;
+};
