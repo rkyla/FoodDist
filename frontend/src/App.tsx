@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ChatMessage from './components/ChatMessage'
 import VenueInput from './components/VenueInput'
 import { ChatMessageType, Stage, MenuItem } from './types'
-import { searchRestaurant, getMenu, computeSimilarities } from './services/api'
+import { searchRestaurant, getMenu, computeSimilarities, analyzeMatches } from './services/api'
 
 function App() {
   const [messages, setMessages] = useState<ChatMessageType[]>([
@@ -33,6 +33,12 @@ function App() {
         const similaritiesResult = await computeSimilarities()
         console.log('Similarities result:', similaritiesResult)
         addAIMessage('Similarities computed', 'computed')
+
+        // Analyze matches
+        addAIMessage('Analyzing matches...', 'analyzing')
+        const analysisResult = await analyzeMatches()
+        console.log('Analysis result:', analysisResult)
+        addAIMessage(`Analysis summary: ${analysisResult.summary}`, 'analysis_summary')
 
         // You can process the similarities result here if needed
         // For example, you could add a new message with the most similar items

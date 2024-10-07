@@ -22,6 +22,14 @@ class MenuItem(BaseModel):
 class MenuItems(BaseModel):
     items: List[MenuItem]
 
+class MatchAnalysis(BaseModel):
+    recommendation: str
+    reasoning: str
+    highlights: List[str]
+
+class IngredientMatch(BaseModel):
+    is_match: bool
+
 class RestaurantService:
     def __init__(self):
         self.options = webdriver.ChromeOptions()
@@ -30,6 +38,7 @@ class RestaurantService:
         self.openai_service = OpenAIService()
         self.brochure_service = BrochureService()
         self.structured_items = None
+        self.similarity_results = None
 
     async def search_restaurant(self, restaurant_name: str):
         search_query = f"{restaurant_name} sydney"
@@ -109,7 +118,7 @@ class RestaurantService:
 
         all_ingredients = set()
         for item in self.structured_items.items:
-            all_ingredients.update(f"{item.name} - {ingredient}" for ingredient in item.ingredients)
+            all_ingredients.update(f"Ingredient - {ingredient}" for ingredient in item.ingredients)
 
         ingredient_embeddings = self.brochure_service.generate_ingredient_embeddings(list(all_ingredients))
         
@@ -117,7 +126,7 @@ class RestaurantService:
         for item in self.structured_items.items:
             item_similarities = {}
             for ingredient in item.ingredients:
-                combined_key = f"{item.name} - {ingredient}"
+                combined_key = f"Ingredient - {ingredient}"
                 embedding = ingredient_embeddings[combined_key]
                 max_similarity = -1
                 max_similar_item = ""
@@ -135,7 +144,63 @@ class RestaurantService:
                 "similarities": item_similarities
             })
 
-        return {"menu_items": result}
+        self.similarity_results = {"menu_items": result}
+        return self.similarity_results
+
+    def analyze_and_summarize_matches(self):
+        if not self.similarity_results:
+            return {"error": "No similarity results found. Please compute similarities first."}
+
+        true_matches = []
+        total_matches = 0
+
+        for item in self.similarity_results["menu_items"]:
+            for ingredient, similarity_info in item["similarities"].items():
+                prompt = f"""
+                Compare the following ingredient and its closest match:
+                Ingredient: {ingredient}
+                Closest match: {similarity_info['most_similar_item']}
+                
+                Are these essentially the same ingredient? Respond with a JSON object containing a single key 'is_match' with a boolean value.
+                """
+                response = self.openai_service.extract_structured_information(
+                    user_input=prompt,
+                    output_class=IngredientMatch,
+                    system_prompt="You are a helpful assistant that analyzes ingredient matches."
+                )
+                if response.is_match:
+                    true_matches.append({
+                        "menu_item": item["name"],
+                        "ingredient": ingredient,
+                        "match": similarity_info['most_similar_item']
+                    })
+                    total_matches += 1
+
+        summary_prompt = f"""
+        Analyze the following list of matching ingredients between a restaurant's menu and our database:
+        {json.dumps(true_matches, indent=2)}
+
+        Total matches: {total_matches}
+        Total menu items: {len(self.similarity_results["menu_items"])}
+
+        Based on this information, provide a concise summary for a sales representative about whether they should approach this restaurant to sell matching ingredients. Consider the number of matches relative to the total menu items and the significance of the matching ingredients.
+
+        Your response should include:
+        1. A recommendation (approach or not approach)
+        2. A brief explanation of the reasoning
+        3. Any specific ingredients or menu items to highlight in the sales pitch, if applicable
+
+        Respond in a professional tone suitable for a sales context.
+        """
+
+        summary = self.openai_service.chat_completion(summary_prompt)
+
+        return {
+            "true_matches": true_matches,
+            "total_matches": total_matches,
+            "total_menu_items": len(self.similarity_results["menu_items"]),
+            "summary": summary
+        }
 
     @staticmethod
     def cosine_similarity(a, b):

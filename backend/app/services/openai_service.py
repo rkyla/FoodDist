@@ -25,3 +25,13 @@ class OpenAIService:
         )
         
         return completion.choices[0].message.parsed
+
+    def chat_completion(self, prompt, model="gpt-4o-mini"):
+        response = self.client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+            ]
+        )
+        return response.choices[0].message.content

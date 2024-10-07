@@ -18,3 +18,12 @@ async def compute_similarities():
     if isinstance(result, dict) and "error" in result:
         raise HTTPException(status_code=400, detail=result["error"])
     return result
+
+@router.get("/analyze_matches")
+async def analyze_matches():
+    if not restaurant_service.similarity_results:
+        raise HTTPException(status_code=400, detail="Similarities not computed. Please compute similarities first.")
+    result = restaurant_service.analyze_and_summarize_matches()
+    if isinstance(result, dict) and "error" in result:
+        raise HTTPException(status_code=400, detail=result["error"])
+    return result

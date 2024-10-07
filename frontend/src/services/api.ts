@@ -32,3 +32,14 @@ export const computeSimilarities = async () => {
     throw error;
   }
 };
+
+export const analyzeMatches = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/analyze_matches`);
+    console.log('Match analysis:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error analyzing matches:', error);
+    throw error;
+  }
+};
