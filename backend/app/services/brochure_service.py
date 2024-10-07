@@ -35,12 +35,6 @@ class BrochureService:
         except FileNotFoundError:
             print("Full embeddings file not found. Please run process_brochure() first.")
 
-        # try:
-        #     with open('/Users/rohithkyla/FoodDist/backend/app/services/subcategory_item_embeddings.pkl', 'rb') as f:
-        #         self.subcategory_item_embeddings = pickle.load(f)
-        #     print("Subcategory item embeddings loaded successfully.")
-        # except FileNotFoundError:
-        #     print("Subcategory item embeddings file not found. Please run process_brochure() first.")
 
     def get_embedding(self, text: str, model: str = "text-embedding-3-large") -> List[float]:
         text = text.replace("\n", " ")
