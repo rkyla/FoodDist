@@ -187,11 +187,11 @@ class RestaurantService:
         Based on this information, provide a concise summary for a sales representative about whether they should approach this restaurant to sell matching ingredients. Consider the number of matches relative to the total menu items (each menu item has multiple ingredients) and the significance of the matching ingredients.
 
         Your response should include:
-        1. A recommendation (approach or not approach)
-        2. A brief explanation of the reasoning
-        3. Any specific ingredients or menu items to highlight in the sales pitch, if applicable
+        A recommendation (approach or not approach)
+        A brief explanation of the reasoning
+        Any specific ingredients or menu items to highlight in the sales pitch, if applicable
 
-        Respond in a professional tone suitable for a sales context.
+        Respond in a professional tone suitable for a sales context. Return plain text without any markdown (or bold, italic, etc) formatting.
         """
 
         summary = self.openai_service.chat_completion(summary_prompt)

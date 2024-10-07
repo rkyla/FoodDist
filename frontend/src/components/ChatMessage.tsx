@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { User, Bot, ChevronDown, ChevronUp } from 'lucide-react'
-import { ChatMessageType, MenuItem } from '../types'
+import { ChatMessageType, MenuItem, SimilarityItem } from '../types'
 
 interface ChatMessageProps {
   message: ChatMessageType
@@ -47,6 +47,41 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
             ))}
           </ul>
           {menuItems.length > 3 && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="text-blue-500 hover:text-blue-700 font-medium flex items-center"
+            >
+              {isExpanded ? (
+                <>
+                  <ChevronUp size={16} className="mr-1" /> Collapse
+                </>
+              ) : (
+                <>
+                  <ChevronDown size={16} className="mr-1" /> Expand
+                </>
+              )}
+            </button>
+          )}
+        </>
+      )
+    }
+    if (message.stage === 'similarities' && Array.isArray(message.content)) {
+      const similarityItems = message.content as SimilarityItem[]
+      const displayedSimilarityItems = isExpanded ? similarityItems : similarityItems.slice(0, 3)
+      return (
+        <>
+          <ul className="list-disc pl-5 mb-2">
+            {displayedSimilarityItems.map((item, index) => (
+              <li key={index}>
+                <strong>{item.menuItem}</strong>
+                <ul className="list-circle pl-5">
+                  <li>Ingredient: <i>{item.ingredient}</i></li>
+                  <li>Match: <i>{item.match}</i></li>
+                </ul>
+              </li>
+            ))}
+          </ul>
+          {similarityItems.length > 3 && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="text-blue-500 hover:text-blue-700 font-medium flex items-center"

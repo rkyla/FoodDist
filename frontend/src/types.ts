@@ -1,12 +1,18 @@
-export type Stage = 'initial' | 'searching' | 'found' | 'menu_loaded' | 'ingredients' | 'error' | 'computing' | 'computed' | 'similarities' | 'analyzing' | 'analysis_summary'
+export type Stage = 'initial' | 'searching' | 'found' | 'menu_loaded' | 'ingredients' | 'computing' | 'computed' | 'similarities' | 'analyzing' | 'analysis_summary' | 'error'
 
 export interface ChatMessageType {
   role: 'user' | 'assistant'
-  content: string | MenuItem[]
+  content: string | MenuItem[] | SimilarityItem[]
   stage?: Stage
 }
 
-export type MenuItem = {
-  name: string;
-  ingredients: string[] | undefined;
-};
+export interface MenuItem {
+  name: string
+  ingredients: string[] | undefined
+}
+
+export interface SimilarityItem {
+  menuItem: string
+  ingredient: string
+  match: string
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ChatMessage from './components/ChatMessage'
 import VenueInput from './components/VenueInput'
-import { ChatMessageType, Stage, MenuItem } from './types'
+import { ChatMessageType, Stage, MenuItem, SimilarityItem } from './types'
 import { searchRestaurant, getMenu, computeSimilarities, analyzeMatches } from './services/api'
 
 function App() {
@@ -34,20 +34,21 @@ function App() {
         console.log('Similarities result:', similaritiesResult)
         addAIMessage('Similarities computed', 'computed')
 
+        if (similaritiesResult.menu_items) {
+          const topSimilarities: SimilarityItem[] = similaritiesResult.menu_items.flatMap((item: any) => 
+            Object.entries(item.similarities).map(([ingredient, similarity]) => ({
+              menuItem: item.name,
+              ingredient,
+              match: (similarity as { most_similar_item: string }).most_similar_item
+            }))
+          )
+          addAIMessage(topSimilarities, 'similarities')
+        }
+
         // Analyze matches
         addAIMessage('Analyzing matches...', 'analyzing')
         const analysisResult = await analyzeMatches()
         console.log('Analysis result:', analysisResult)
-
-        // You can process the similarities result here if needed
-        // For example, you could add a new message with the most similar items
-        if (similaritiesResult.menu_items) {
-          const topSimilarities = similaritiesResult.menu_items.map((item: any) => {
-            const topIngredient = Object.entries(item.similarities).reduce((a, b) => a[1].similarity > b[1].similarity ? a : b)
-            return `${item.name}: ${topIngredient[0]} - ${topIngredient[1].most_similar_item} (${topIngredient[1].similarity.toFixed(2)})`
-          }).join('\n')
-          addAIMessage(`Top similarities:\n${topSimilarities}`, 'similarities')
-        }
 
         addAIMessage(`Analysis summary: ${analysisResult.summary}`, 'analysis_summary')
       } else {
@@ -60,20 +61,8 @@ function App() {
     }
   }
 
-  const addAIMessage = (content: string | MenuItem[], stage: Stage) => {
+  const addAIMessage = (content: string | MenuItem[] | SimilarityItem[], stage: Stage) => {
     setMessages((prevMessages) => [...prevMessages, { role: 'assistant', content, stage }])
-  }
-
-  const generateAIResponse = (venue: string | string[], menuItems: string[] = []) => {
-    // You can implement more sophisticated logic here based on the menu items
-    const responses = [
-      `For ${venue}, I recommend our new line of plant-based proteins. They're perfect for vegan cafes and health-conscious customers.`,
-      `${venue} might be interested in our seasonal fruit selection. We have a great variety of locally sourced produce.`,
-      `Based on ${venue}'s menu, our artisanal cheese collection could be a great fit. It pairs well with their wine selection.`,
-      `For ${venue}, our premium coffee beans would be an excellent addition. They're sourced from sustainable farms.`,
-      `${venue} could benefit from our range of gluten-free products. They're becoming increasingly popular among health-conscious diners.`,
-    ]
-    return responses[Math.floor(Math.random() * responses.length)]
   }
 
   return (
