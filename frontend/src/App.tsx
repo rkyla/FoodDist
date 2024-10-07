@@ -38,7 +38,6 @@ function App() {
         addAIMessage('Analyzing matches...', 'analyzing')
         const analysisResult = await analyzeMatches()
         console.log('Analysis result:', analysisResult)
-        addAIMessage(`Analysis summary: ${analysisResult.summary}`, 'analysis_summary')
 
         // You can process the similarities result here if needed
         // For example, you could add a new message with the most similar items
@@ -49,12 +48,12 @@ function App() {
           }).join('\n')
           addAIMessage(`Top similarities:\n${topSimilarities}`, 'similarities')
         }
+
+        addAIMessage(`Analysis summary: ${analysisResult.summary}`, 'analysis_summary')
       } else {
         addAIMessage('No menu items found.', 'ingredients')
       }
 
-      const aiResponse = generateAIResponse(venue, menuResult.menu_items)
-      addAIMessage(aiResponse, 'ingredients')
     } catch (error) {
       console.error('Error:', error)
       addAIMessage('Sorry, I encountered an error while processing your request.', 'error')

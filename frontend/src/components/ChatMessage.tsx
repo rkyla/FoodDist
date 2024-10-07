@@ -20,6 +20,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
         return 'bg-yellow-100 text-yellow-800'
       case 'ingredients':
         return 'bg-purple-100 text-purple-800'
+      case 'analysis_summary':
+        return 'bg-green-800 text-green-100'
       default:
         return 'bg-gray-100 text-gray-800'
     }
