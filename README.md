@@ -79,6 +79,22 @@ The backend will be available at `http://localhost:8000`.
 
 The frontend will be available at `http://localhost:5173`.
 
+## Environment Setup
+
+### Backend Configuration
+
+The backend requires a `.env` file in the root of the backend directory. This file should contain the necessary environment variables for the application to function correctly.
+
+1. Create a file named `.env` in the backend directory.
+2. Add the following content to the file:
+
+```
+OPENAI_API_KEY=<your_openai_api_key>
+```
+
+Replace `<your_openai_api_key>` with your actual OpenAI API key.
+
+
 ## Usage
 
 1. Open your browser and go to `http://localhost:5173`.
