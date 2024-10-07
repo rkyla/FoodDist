@@ -30,6 +30,9 @@ class MatchAnalysis(BaseModel):
 class IngredientMatch(BaseModel):
     is_match: bool
 
+class IngredientMatchBatch(BaseModel):
+    matches: List[bool]
+
 class RestaurantService:
     def __init__(self):
         self.options = webdriver.ChromeOptions()
@@ -94,6 +97,8 @@ class RestaurantService:
         )
         items = menu_container.find_elements(By.CSS_SELECTOR, 'div[role="treeitem"]')
         raw_menu_items = [item.text.strip() for item in items if item.text.strip()]
+
+        print(raw_menu_items)
         
         # Use OpenAI to extract structured information
         system_prompt = """
@@ -153,28 +158,24 @@ class RestaurantService:
 
         true_matches = []
         total_matches = 0
+        batch_size = 20  # Adjust this based on your needs and API limits
+        comparison_batch = []
 
         for item in self.similarity_results["menu_items"]:
             for ingredient, similarity_info in item["similarities"].items():
-                prompt = f"""
-                Compare the following ingredient and its closest match:
-                Ingredient: {ingredient}
-                Closest match: {similarity_info['most_similar_item']}
-                
-                Are these essentially the same ingredient? Respond with a JSON object containing a single key 'is_match' with a boolean value.
-                """
-                response = self.openai_service.extract_structured_information(
-                    user_input=prompt,
-                    output_class=IngredientMatch,
-                    system_prompt="You are a helpful assistant that analyzes ingredient matches."
-                )
-                if response.is_match:
-                    true_matches.append({
-                        "menu_item": item["name"],
-                        "ingredient": ingredient,
-                        "match": similarity_info['most_similar_item']
-                    })
-                    total_matches += 1
+                comparison_batch.append({
+                    "menu_item": item["name"],
+                    "ingredient": ingredient,
+                    "match": similarity_info['most_similar_item']
+                })
+
+                if len(comparison_batch) == batch_size:
+                    true_matches, total_matches = self._process_batch(comparison_batch, true_matches, total_matches)
+                    comparison_batch = []
+
+        # Process any remaining items
+        if comparison_batch:
+            true_matches, total_matches = self._process_batch(comparison_batch, true_matches, total_matches)
 
         summary_prompt = f"""
         Analyze the following list of matching ingredients between a restaurant's menu and our database:
@@ -183,7 +184,7 @@ class RestaurantService:
         Total matches: {total_matches}
         Total menu items: {len(self.similarity_results["menu_items"])}
 
-        Based on this information, provide a concise summary for a sales representative about whether they should approach this restaurant to sell matching ingredients. Consider the number of matches relative to the total menu items and the significance of the matching ingredients.
+        Based on this information, provide a concise summary for a sales representative about whether they should approach this restaurant to sell matching ingredients. Consider the number of matches relative to the total menu items (each menu item has multiple ingredients) and the significance of the matching ingredients.
 
         Your response should include:
         1. A recommendation (approach or not approach)
@@ -201,6 +202,24 @@ class RestaurantService:
             "total_menu_items": len(self.similarity_results["menu_items"]),
             "summary": summary
         }
+
+    def _process_batch(self, batch: List[Dict], true_matches: List[Dict], total_matches: int):
+        prompt = "Compare the following ingredients and their closest matches. For each pair, determine if they are essentially the same ingredient. Respond with a JSON object containing a list of boolean values under the key 'matches'.\n\n"
+        for item in batch:
+            prompt += f"Ingredient: {item['ingredient']}\nClosest match: {item['match']}\n\n"
+
+        response = self.openai_service.extract_structured_information(
+            user_input=prompt,
+            output_class=IngredientMatchBatch,
+            system_prompt="You are a helpful assistant that analyzes ingredient matches."
+        )
+
+        for item, is_match in zip(batch, response.matches):
+            if is_match:
+                true_matches.append(item)
+                total_matches += 1
+
+        return true_matches, total_matches
 
     @staticmethod
     def cosine_similarity(a, b):
